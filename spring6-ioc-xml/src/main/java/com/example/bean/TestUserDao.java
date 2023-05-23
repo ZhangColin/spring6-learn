@@ -7,7 +7,7 @@ public class TestUserDao {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
 
-        UserDao dao = (UserDao)context.getBean(UserDao.class);
+        UserDao dao = context.getBean(UserDao.class);
         System.out.println(dao);
         dao.run();
     }

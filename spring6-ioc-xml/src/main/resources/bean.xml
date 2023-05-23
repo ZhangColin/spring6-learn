@@ -5,6 +5,7 @@
 
     <bean id="user" class="com.example.User"></bean>
 
-    <bean id="userDao" class="com.example.bean.UserDaoImpl"></bean>
+    <bean id="userDaoImpl" class="com.example.bean.UserDaoImpl"></bean>
+<!--    <bean id="personDaoImpl" class="com.example.bean.PersonDaoImpl"></bean>-->
 
 </beans>
