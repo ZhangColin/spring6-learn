@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.lang.reflect.InvocationTargetException;
+
 public class TestUser {
     @Test
     public void testUserObject(){
@@ -16,5 +18,14 @@ public class TestUser {
 
         // 使用对象调用方法进行测试
         user.add();
+    }
+
+    @Test
+    public void testUserObject1() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+        Class<?> aClass = Class.forName("com.example.User");
+
+//        Object o = aClass.newInstance();
+        User user = (User)aClass.getDeclaredConstructor().newInstance();
+        System.out.println(user);
     }
 }
