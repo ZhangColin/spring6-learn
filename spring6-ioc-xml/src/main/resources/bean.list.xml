@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="department" class="com.example.di.Department">
+        <property name="name" value="门卫"/>
+        <property name="employees">
+            <list>
+                <ref bean="employee1"/>
+                <ref bean="employee2"/>
+            </list>
+        </property>
+    </bean>
+    <bean id="employee1" class="com.example.di.Employee">
+        <property name="name" value="colin"/>
+        <property name="age" value="45"/>
+        <property name="department" ref="department"/>
+        <property name="loves">
+            <array>
+                <value>football</value>
+                <value>basketball</value>
+            </array>
+        </property>
+    </bean>
+    <bean id="employee2" class="com.example.di.Employee">
+        <property name="name" value="emily"/>
+        <property name="age" value="45"/>
+        <property name="department" ref="department"/>
+        <property name="loves">
+            <array>
+                <value>football</value>
+                <value>basketball</value>
+            </array>
+        </property>
+    </bean>
+
+</beans>

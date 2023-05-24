@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="student" class="com.example.di.Student">
+        <property name="name" value="ekin"/>
+        <property name="id" value="1"/>
+        <property name="teacherMap" ref="teacherMap"/>
+    </bean>
+    <bean id="teacher1" class="com.example.di.Teacher">
+        <property name="name" value="colin"/>
+        <property name="id" value="1"/>
+    </bean>
+    <bean id="teacher2" class="com.example.di.Teacher">
+        <property name="name" value="emily"/>
+        <property name="id" value="2"/>
+    </bean>
+
+    <bean id="department" class="com.example.di.Department">
+        <property name="name" value="门卫"/>
+        <property name="employees" ref="employeeList"/>
+    </bean>
+    <bean id="employee1" class="com.example.di.Employee">
+        <property name="name" value="colin"/>
+        <property name="age" value="45"/>
+        <property name="department" ref="department"/>
+        <property name="loves">
+            <array>
+                <value>football</value>
+                <value>basketball</value>
+            </array>
+        </property>
+    </bean>
+    <bean id="employee2" class="com.example.di.Employee">
+        <property name="name" value="emily"/>
+        <property name="age" value="45"/>
+        <property name="department" ref="department"/>
+        <property name="loves">
+            <array>
+                <value>football</value>
+                <value>basketball</value>
+            </array>
+        </property>
+    </bean>
+
+    <util:list id="employeeList">
+        <ref bean="employee1"/>
+        <ref bean="employee2"/>
+    </util:list>
+
+    <util:map id="teacherMap">
+        <entry key="1" value-ref="teacher1"/>
+        <entry key="2" value-ref="teacher2"/>
+    </util:map>
+</beans>
