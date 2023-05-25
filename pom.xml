@@ -13,7 +13,8 @@
         <module>spring6-ioc-xml</module>
         <module>spring6-ioc-annotation</module>
         <module>spring6-reflect</module>
-        <module>spring6-reflect/com.example</module>
+        <module>spring6-reflect</module>
+        <module>custom-ioc</module>
     </modules>
 
     <properties>
